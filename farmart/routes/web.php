@@ -21,3 +21,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/{product}', [CartController::class, 'add'])->name('cart.add');
     Route::delete('/cart/{cart}', [CartController::class, 'remove'])->name('cart.remove');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
